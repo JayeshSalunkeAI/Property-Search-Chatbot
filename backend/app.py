@@ -1,6 +1,5 @@
 """
-FastAPI Main Application - 100% LOCAL
-NO external API dependencies
+FastAPI Main Application
 """
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -12,9 +11,9 @@ from config import Config
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="Property Search Chatbot API - LOCAL",
-    version="1.0.0",
-    description="Completely local implementation - No API keys required!"
+    title="Property Search Chatbot",
+    version="1.1.0",
+    description="Chatbot To search Properties!"
 )
 
 # CORS configuration
@@ -27,28 +26,28 @@ app.add_middleware(
 )
 
 # Initialize components (all LOCAL)
-print("Initializing LOCAL components (No APIs needed)...")
+print("Initializing components...")
 parser = QueryParser()
 search_engine = SearchEngine(data_path=Config.DATA_PATH)
 summarizer = Summarizer()
-print("✓ All components initialized locally!")
+print("✓ All components initialized!")
 
 
 @app.get("/")
 def root():
     """Root endpoint"""
     return {
-        "message": "Property Search Chatbot API - 100% LOCAL",
+        "message": "Property Search Chatbot",
         "status": "running",
         "api_keys_required": False,
-        "version": "1.0.0"
+        "version": "1.1.0"
     }
 
 
 @app.post("/api/chat", response_model=ChatResponse)
 def chat(query: ChatQuery):
     """
-    Main chat endpoint - Processes queries locally
+    Main chat endpoint - Processes queries
     
     Args:
         query: ChatQuery with user message
@@ -112,7 +111,7 @@ def get_stats():
 if __name__ == "__main__":
     import uvicorn
     print("\n" + "="*60)
-    print("Starting Property Search Chatbot - LOCAL MODE")
-    print("No API keys required!")
+    print("Starting Property Search Chatbot")
+    print("Thought about Properties")
     print("="*60 + "\n")
     uvicorn.run(app, host=Config.HOST, port=Config.PORT)
