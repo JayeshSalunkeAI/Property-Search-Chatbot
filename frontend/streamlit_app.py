@@ -220,7 +220,7 @@ if prompt := st.chat_input("Describe your property requirements..."):
                         "properties": data['properties']
                     })
                 else:
-                    st.error(f"⚠️ Server returned status code: {response.status_code}")
+                    st.error(f"⚠️ No Properties Found Server returned status code: {response.status_code}")
             
             except requests.exceptions.ConnectionError:
                 st.error("❌ Cannot connect to the backend API.")
@@ -242,5 +242,5 @@ with col2:
 
 with col3:
     st.markdown("**🔧 Tech Stack**")
-    st.caption("Python • FastAPI • Streamlit")
+    st.caption("Python • Streamlit")
 
