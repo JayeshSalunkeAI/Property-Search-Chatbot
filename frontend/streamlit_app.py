@@ -115,17 +115,6 @@ with st.sidebar:
             st.session_state.messages.append({"role": "user", "content": example})
             st.rerun()
     
-    st.divider()
-    
-    st.subheader("🎯 Features")
-    st.markdown("""
-    - Natural language understanding
-    - Smart filter extraction
-    - Real-time property search
-    - Detailed property cards
-    - Budget-based filtering
-    - Location-based search
-    """)
     
     st.divider()
     
@@ -245,7 +234,7 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     st.markdown("**🏠 Property Search Bot**")
-    st.caption("Made By Jayesh Salunke GitHub@JayeshSalunkeAI")
+    st.caption("Made By GitHub@JayeshSalunkeAI")
 
 with col2:
     st.markdown("**📊 Search Capabilities**")
