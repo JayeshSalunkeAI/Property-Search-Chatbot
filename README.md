@@ -1,4 +1,6 @@
-# Property Search Chatbot - 100% LOCAL 🏠
+# Instllation and Demo Video Link: https://youtu.be/ju-WgatzMAY
+
+# Property Search Chatbot - By @JayeshSalunkeAI 🏠
 
 **No API Keys Required! Runs completely on your machine.**
 
